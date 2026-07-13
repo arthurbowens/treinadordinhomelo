@@ -1,11 +1,14 @@
 <!-- Header -->
 <header class="fixed inset-x-0 top-0 z-50 border-b border-gold-500/15 bg-navy-950/85 backdrop-blur-md">
   <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-20 md:px-8">
-    <a href="#inicio" class="leading-tight" (click)="closeMenu()">
-      <span class="block font-display text-[0.65rem] tracking-[0.22em] text-gold-500 md:text-xs">PERSONAL TRAINER</span>
-      <span class="font-display text-2xl tracking-[0.08em] text-cream md:text-3xl">
-        DINHO <span class="text-gold-500">ALVES</span>
-      </span>
+    <a href="#inicio" class="flex shrink-0 items-center" (click)="closeMenu()">
+      <img
+        src="/logo.png"
+        alt="Dinho Melo Personal Trainer"
+        class="h-12 w-auto object-contain md:h-14"
+        width="160"
+        height="56"
+      />
     </a>
 
     <nav class="hidden items-center gap-7 lg:flex" aria-label="Principal">
@@ -380,10 +383,15 @@
   <div
     class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 text-center md:flex-row md:px-8 md:text-left"
   >
-    <div>
-      <p class="font-display text-[0.65rem] tracking-[0.22em] text-gold-500">PERSONAL TRAINER</p>
-      <p class="font-display text-xl tracking-wide text-cream">DINHO <span class="text-gold-500">ALVES</span></p>
-    </div>
+    <a href="#inicio" class="inline-flex">
+      <img
+        src="/logo.png"
+        alt="Dinho Melo Personal Trainer"
+        class="h-14 w-auto object-contain"
+        width="180"
+        height="56"
+      />
+    </a>
     <p class="text-sm text-cream/45">Educação Física</p>
     <div class="flex items-center gap-4">
       <a
