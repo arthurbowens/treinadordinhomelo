@@ -1,3 +1,146 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import "tailwindcss";
+
+@theme {
+  --font-display: "Bebas Neue", sans-serif;
+  --font-sans: "Outfit", sans-serif;
+  --color-navy-950: #050b16;
+  --color-navy-900: #0a1628;
+  --color-navy-800: #102038;
+  --color-navy-700: #1a3358;
+  --color-gold-400: #e8c547;
+  --color-gold-500: #c9a227;
+  --color-gold-600: #a8841a;
+  --color-cream: #f3eee3;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background: var(--color-navy-950);
+    color: var(--color-cream);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-gold-500) 40%, transparent);
+    color: white;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gold-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease both;
+}
+
+.animate-slide-in {
+  animation: slide-in-right 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-gold-line {
+  transform-origin: left;
+  animation: gold-line 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+.delay-1 {
+  animation-delay: 0.12s;
+}
+.delay-2 {
+  animation-delay: 0.24s;
+}
+.delay-3 {
+  animation-delay: 0.36s;
+}
+.delay-4 {
+  animation-delay: 0.5s;
+}
+
+.hero-bg {
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(201, 162, 39, 0.12), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(26, 51, 88, 0.8), transparent 50%),
+    linear-gradient(165deg, #050b16 0%, #0a1628 45%, #0d1f3c 100%);
+}
+
+.section-bg {
+  background:
+    linear-gradient(180deg, #0a1628 0%, #050b16 100%);
+}
+
+.mesh-line {
+  background-image:
+    linear-gradient(rgba(201, 162, 39, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 162, 39, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.photo-frame {
+  position: relative;
+}
+
+.photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 1.25rem -1rem -1rem 1.25rem;
+  border: 1px solid rgba(201, 162, 39, 0.45);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.photo-frame img {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .photo-frame::before {
+    inset: 0.75rem -0.5rem -0.5rem 0.75rem;
+  }
+}
